@@ -1,5 +1,10 @@
 {
     "name": "icovn/php-ip-filter",
+    "type": "library",
+    "description": "Small lib to check if a IP is in multiple range or no",
+    "keywords": ["ip","range","cidr","subnet"],
+    "homepage": "https://github.com/icovn/php-ip-filter",
+    "license": "MIT",
     "repositories": [
         {
             "type": "vcs",
