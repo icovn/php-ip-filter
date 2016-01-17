@@ -11,7 +11,7 @@ class IpFilterTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $actual);
     }
 
-    public function testSubnetMask()
+    public function testSubnetInMask()
     {
         $expected = true;
         $filter = new IpFilter('10.28.0.0/255.255.0.0');
@@ -31,6 +31,14 @@ class IpFilterTest extends \PHPUnit_Framework_TestCase
     {
         $expected = true;
         $filter = new IpFilter('10.28.255.0-10.28.255.9');
+        $actual = $filter -> check('10.28.255.1');
+        $this->assertEquals($expected, $actual);
+    }
+
+    public function testMultipleSubnetInMaskAdvance()
+    {
+        $expected = true;
+        $filter = new IpFilter(array('10.22.0.0 255.255.0.0','10.24.0.0 255.255.0.0','10.26.0.0 255.255.0.0','10.28.0.0 255.255.0.0'));
         $actual = $filter -> check('10.28.255.1');
         $this->assertEquals($expected, $actual);
     }
