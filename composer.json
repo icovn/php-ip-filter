@@ -1,0 +1,17 @@
+{
+    "name": "icovn/php-ip-filter",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/icovn/php-ip-filter"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "^5.1"
+    },
+    "autoload":{
+        "classmap": [
+            "lib/IpFilter.php"
+        ]
+    }
+}
